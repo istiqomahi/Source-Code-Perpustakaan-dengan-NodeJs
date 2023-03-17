@@ -1,0 +1,119 @@
+GET http://localhost:8000/buku
+###
+GET http://localhost:8000/buku/1
+###
+POST http://localhost:8000/buku
+Content-Type : application/json
+
+{
+    "Id_book" :"4",
+    "Book_name":"Sari Gandum",
+    "Book_state":"-",
+    "Author_book":"Istiqomah",
+    "book_publication_year":"2021"
+}
+
+###
+PATCH http://localhost:8000/buku/4
+Content-Type : application/json
+
+{
+    "Id_book" :"04",
+    "Book_name":"How Install Computer",
+    "Book_state":"-",
+    "Author_book":"Andrea Hirata",
+    "book_publication_year":" Januari 2023"
+}
+
+###
+DELETE http://localhost:8000/buku/4
+
+###
+GET http://localhost:8000/PeminjamBuku
+
+###
+GET http://localhost:8000/PeminjamBuku/1
+
+###
+POST http://localhost:8000/PeminjamBuku
+Content-Type : application/json
+
+{
+    "book_borrower_id": "A02",
+    "borrowers_name": "Hisana",
+    "user_id":"Hisana@gmail.com"
+}
+
+###
+PATCH http://localhost:8000/PeminjamBuku/A01
+Content-Type: application/json
+
+{
+    "book_borrower_id": "A00",
+    "borrowers_name": "Istiqomah",
+    "user_id":"istiqomahi099@gmail.com"
+}
+###
+DELETE http://localhost:8000/PeminjamBuku/A01
+###
+GET http://localhost:8000/PinjamanBuku
+###
+GET http://localhost:8000/PinjamanBuku/
+###
+POST http://localhost:8000/PinjamanBuku
+Content-Type : application/json
+
+{
+    "loan_id": "A03",
+    "loan_start_date": "16 maret 2023",
+    "Return_rule_date":"19 maret 2023",
+    "Return_Date":"116 maret 2023",
+    "borrower_id":"A01",
+    "book_id": "01",
+    "Loan_status":"-"
+}
+###
+PATCH http://localhost:8000/PinjamanBuku/A02
+Content-Type : application/json
+
+{
+    "loan_id": "A03",
+    "loan_start_date": "16 maret 2023",
+    "Return_rule_date":"19 maret 2023",
+    "Return_Date":"116 maret 2023",
+    "borrower_id":"A01",
+    "book_id": "01",
+    "Loan_status":"-"
+}
+###
+DELETE http://localhost:8000/PinjamanBuku/A03
+
+###
+GET http://localhost:8000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6NiwibmFtZSI6Im5pbnUiLCJlbWFpbCI6Im5pbnVAZ21haWwuY29tIiwiaWF0IjoxNjc4NzA4NzE5LCJleHAiOjE2Nzg3MDg3Mzl9.5_sDInav1VZ0_OPK78ThWLKrDmbW1jL5rd-D3Bd9dLs
+
+###
+POST http://localhost:8000/users
+COntent-Type : application/json
+
+{
+    "name":"ninu",
+    "email":"ninu@gmail.com",
+    "password":"1234",
+    "confpassword":"1234"
+}
+
+###
+POST http://localhost:8000/login
+Content-Type:application/json
+
+{
+    "email":"ninu@gmail.com",
+    "password":"1234"
+}
+###
+GET http://localhost:8000/token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6NiwibmFtZSI6Im5pbnUiLCJlbWFpbCI6Im5pbnVAZ21haWwuY29tIiwiaWF0IjoxNjc4NzA0NDk3LCJleHAiOjE2Nzg3MDQ1MTd9.bs6EdkiNggthu7pK44K60aow1q6cN8fwQ3sla3USCA0
+###
+DELETE http://localhost:8000/logout
+
